@@ -1,32 +1,48 @@
 package geo;
+
 public class Geometrics {
-    private static double x = 10.0;
-    private static double y = 5.0;
-    private static double z = 3.0;
-    private static int x1 = 8;
-    private static int y1 = 7;
-    private static int z1 = 10;
-    private static int x2 = 100;
-    private static int y2 = 57;
-    private static int z2 = 129;
-    private static int x3 = 45;
-    private static int y3 = 89;
-    private static int z3 = 69;
+
+    // private static double x = 10.0;
+    // private static double y = 5.0;
+    // private static double z = 3.0;
+    // private static int x1 = 8;
+    // private static int y1 = 7;
+    // private static int z1 = 10;
+    // private static int x2 = 100;
+    // private static int y2 = 57;
+    // private static int z2 = 129;
+    // private static int x3 = 45;
+    // private static int y3 = 89;
+    // private static int z3 = 69;
+
+    static int[] x = { 10, 8, 100, 45 };
+    static int[] y = { 5, 7, 57, 89 };
+    static int[] z = { 3, 10, 129, 69 };
 
     public static void main(String[] args) {
         // area ... Fläche
+
         System.out.println("Square area");
-        System.out.println("x * x = " + x * x);
-        System.out.println("x1 * x1 = " + x1 * x1);
-        System.out.println("x2 * x2 = " + x2 * x2);
-        System.out.println("y * y = " + y * y);
+        for (int i = 0; i < (x.length - 1); i++) {
+            System.out.println("x" + x[i + 1] + " * x" + x[i + 1] + " = " + x[i] * x[i]);
+
+        }
+        System.out.println("y" + y[0] + " * y" + y[0] + " = " + +y[0] * y[0]);
+
+        // System.out.println("x * x = " + x * x);
+        // System.out.println("x1 * x1 = " + x1 * x1);
+        // System.out.println("x2 * x2 = " + x2 * x2);
+        // System.out.println("y * y = " + y * y);
 
         // perimeter ... Umfang
         System.out.println("Square perimeter");
-        System.out.println("4 * x = " + 4 * x);
-        System.out.println("4 * x1 = " + 4 * x1);
-        System.out.println("4 * x2 = " + 4 * x2);
-        System.out.println("4 * y = " + 4 * y);
+        for (int i = 0; i < x.length; i++) {
+            System.out.println("4 * " + x[(i + 1)] + " = " + 4 * x[i]);
+        }
+        // System.out.println("4 * x = " + 4 * x);
+        // System.out.println("4 * x1 = " + 4 * x1);
+        // System.out.println("4 * x2 = " + 4 * x2);
+        // System.out.println("4 * y = " + 4 * y);
 
         System.out.println("Rectangle area");
         System.out.println("x * y = " + x * y);
@@ -42,8 +58,7 @@ public class Geometrics {
 
         System.out.println("We can also calculate some volumes");
         /*
-            z is our height
-            y is our radius
+         * z is our height y is our radius
          */
         System.out.println("Zone of a sphere");
         double v = (Math.PI * z * (3 * Math.pow(y, 2) + 3 * Math.pow(x, 2) + Math.pow(z, 2))) / 6;
@@ -55,4 +70,8 @@ public class Geometrics {
         System.out.println("Ungula");
         System.out.println((double) (2 * x3 * z3) / 3);
     }
+
+    public static void squarePerimeter(char a, int x) {
+
+}
 }
