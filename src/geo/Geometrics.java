@@ -2,9 +2,9 @@ package geo;
 
 public class Geometrics {
 
-    // private static double x = 10.0;
-    // private static double y = 5.0;
-    // private static double z = 3.0;
+    // private static double x = 10.0; >>> to int
+    // private static double y = 5.0; >>> to int
+    // private static double z = 3.0; >>> to int
     // private static int x1 = 8;
     // private static int y1 = 7;
     // private static int z1 = 10;
@@ -20,58 +20,73 @@ public class Geometrics {
     static int[] z = { 3, 10, 129, 69 };
 
     public static void main(String[] args) {
-        // area ... Fläche
 
-        System.out.println("Square area");
-        for (int i = 0; i < (x.length - 1); i++) {
-            System.out.println("x" + x[i + 1] + " * x" + x[i + 1] + " = " + x[i] * x[i]);
-
-        }
-        System.out.println("y" + y[0] + " * y" + y[0] + " = " + +y[0] * y[0]);
-
-        // System.out.println("x * x = " + x * x);
-        // System.out.println("x1 * x1 = " + x1 * x1);
-        // System.out.println("x2 * x2 = " + x2 * x2);
-        // System.out.println("y * y = " + y * y);
-
-        // perimeter ... Umfang
-        System.out.println("Square perimeter");
-        for (int i = 0; i < x.length; i++) {
-            System.out.println("4 * " + x[(i + 1)] + " = " + 4 * x[i]);
-        }
-        // System.out.println("4 * x = " + 4 * x);
-        // System.out.println("4 * x1 = " + 4 * x1);
-        // System.out.println("4 * x2 = " + 4 * x2);
-        // System.out.println("4 * y = " + 4 * y);
-
-        System.out.println("Rectangle area");
-        System.out.println("x * y = " + x * y);
-        System.out.println("x1 * y1 = " + x1 * y1);
-        System.out.println("x2 * y2 = " + x2 * y2);
-        System.out.println("x3 * y3 = " + x3 * y3);
-
-        System.out.println("Rectangle perimeter");
-        System.out.println("x + y = " + x + y);
-        System.out.println("x1 + y1 = " + x1 + y1);
-        System.out.println("x2 + y2 = " + x2 + y2);
-        System.out.println("x3 + y3 = " + x3 + y3);
-
+        squareArea(x, "x", 3);
+        squareArea(y, "y", 1);
+        squarePerimeter(x, "x", 3);
+        squarePerimeter(y, "y", 1);
+        rectangleArea(x, "x", y, "y", 4);
+        rectanglePerimeter(x, "x", y, "y", 4);
         System.out.println("We can also calculate some volumes");
-        /*
-         * z is our height y is our radius
-         */
+        zoneSphere(x[0], y[0], z[0]);
+        sphereCylinder(z[0]);
+        ungula(x[3], y[3]);
+    }
+
+    public static void squareArea(int[] array, String buchstabe, int reihe) {
+        System.out.println("Square area");
+        for (int i = 0; i < reihe; i++) {
+            System.out.println(buchstabe + i + " * " + buchstabe + i + " = " + array[i] * array[i]);
+
+        }
+        System.out.println("");
+    }
+
+    public static void squarePerimeter(int[] array, String buchstabe, int reihe) {
+        System.out.println("Square perimeter");
+        for (int i = 0; i < (reihe); i++) {
+            System.out.println("4 * " + buchstabe + i + " = " + 4 * array[i]);
+
+        }
+        System.out.println("");
+    }
+
+    public static void rectangleArea(int[] array0, String buchstabe, int[] array1, String buchstabe2, int reihe) {
+        System.out.println("Rectangle area");
+        for (int i = 0; i < (reihe); i++) {
+            System.out.println(buchstabe + i + " * " + buchstabe2 + i + " = " + array0[i] * array1[i]);
+
+        }
+        System.out.println("");
+    }
+
+    public static void rectanglePerimeter(int[] array0, String buchstabe, int[] array1, String buchstabe2, int reihe) {
+        System.out.println("Rectangle perimeter");
+        for (int i = 0; i < (reihe); i++) {
+            System.out.println(buchstabe + i + " + " + buchstabe2 + i + " = " + (array0[1] + array1[i]) * 2);
+
+        }
+        System.out.println("");
+    }
+
+    public static void zoneSphere(int x, int y, int z) {
         System.out.println("Zone of a sphere");
+
         double v = (Math.PI * z * (3 * Math.pow(y, 2) + 3 * Math.pow(x, 2) + Math.pow(z, 2))) / 6;
         System.out.println(v);
 
-        System.out.println("Sphere with cylinder");
-        System.out.println(Math.PI * Math.pow(z, 3) / 6);
-
-        System.out.println("Ungula");
-        System.out.println((double) (2 * x3 * z3) / 3);
+        System.out.println("");
     }
 
-    public static void squarePerimeter(char a, int x) {
+    public static void sphereCylinder(int z) {
+        System.out.println("Sphere with cylinder");
+        System.out.println(Math.PI * Math.pow(z, 3) / 6);
+    }
 
-}
+    public static void ungula(int array0, int array1) {
+        System.out.println("Ungula");
+        System.out.println((double) (2 * array0 * array1) / 3);
+
+    }
+
 }
